@@ -33,7 +33,7 @@ public class TorpedoStore {
    * @return
    */
 
-  final Random generator = new Random();
+  final Random generator = new Random(); //itt a random majd ujra hasznalodik
   public boolean fire(int numberOfTorpedos){
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
       throw new IllegalArgumentException("numberOfTorpedos");
@@ -46,14 +46,14 @@ public class TorpedoStore {
 
     if (r >= FAILURE_RATE) {
       // successful firing
-      this.torpedoCount -= numberOfTorpedos;
+      this.torpedoCount -= numberOfTorpedos; //Ez vagany volt
       success = true;
     } else {
       // simulated failure
-      success = false;
+      success = false; //comment
     }
 
-    return success;
+    return success; //uj comment 5
   }
 
   public boolean isEmpty(){
